@@ -1,7 +1,10 @@
 import axios from 'axios';
+import { config } from 'react-native-config';
+
+const localUrl = 'http://192.168.43.150:3333'
 
 const api = axios.create({
-    baseURL: 'http://192.168.1.160:3333'
+    baseURL: "https://bethe-herobackend.herokuapp.com"
 });
 
 export default api;

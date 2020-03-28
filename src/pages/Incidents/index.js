@@ -24,18 +24,18 @@ export default function Incidents() {
             return;
         }
 
-        if (total > 0 && incidents.length === total) {
+        if (total > 0 && incidents.length == total) {
             return;
         }
 
         setLoading(true);
 
         const resp = await api.get('incidents', {
-            params: { pages }
+            params: { page }
         });
 
         setIncidents([...incidents, ...resp.data]);
-        setTotal(response.headers['x-total-count']);
+        setTotal(resp.headers['x-total-count']);
         setPage(page + 1);
         setLoading(false);
     }
